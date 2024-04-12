@@ -8,6 +8,9 @@ import './index.css'
 import Root from './Root';
 import Home from './Home';
 import Details from './Details';
+import SignIn from './SignIn';
+import Register from './Register';
+import AuthProvider from './AuthProvider';
 
 
 const router = createBrowserRouter([
@@ -23,6 +26,16 @@ const router = createBrowserRouter([
         path: '/details/:id',
         element: <Details></Details>,
         loader: ()=> fetch('residence.json')
+      },
+      {
+        path: '/signIn',
+        element: <SignIn></SignIn>
+        
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+        
       }
     ]
   },
@@ -30,6 +43,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+     
+     <AuthProvider><RouterProvider router={router} /></AuthProvider>
   </React.StrictMode>,
 )
