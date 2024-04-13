@@ -11,6 +11,7 @@ import Details from './Details';
 import SignIn from './SignIn';
 import Register from './Register';
 import AuthProvider from './AuthProvider';
+import PrivateRoute from './PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -24,8 +25,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:id',
-        element: <Details></Details>,
-        loader: ()=> fetch('residence.json')
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
+        loader: ()=> fetch('/residence.json')
       },
       {
         path: '/signIn',
