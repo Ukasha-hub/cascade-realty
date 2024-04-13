@@ -1,12 +1,20 @@
 import { useContext } from "react";
 import { Link,  useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
+import { GoogleAuthProvider, getAuth } from "firebase/auth";
+import app from "./firebase.config";
+
 
 const SignIn = () => {
-
+   const auth = getAuth(app)
    const {signIn}= useContext(AuthContext)
    const location= useLocation()
    const navigate= useNavigate()
+   const googleProvider= new GoogleAuthProvider()
+
+   const handleGoogleSignIn=e=>{
+
+   }
 
     const handleLogin= e=>{
         e.preventDefault();
@@ -43,6 +51,8 @@ const SignIn = () => {
                     <input type="password" required name='password' className="grow" placeholder="password" />
                 </label>
                 <button className="btn btn-primary">Login</button>
+
+                <button className="btn btn-primary" onClick={handleGoogleSignIn}>SignIn with Google</button>
                </form>
 
 

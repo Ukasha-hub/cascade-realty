@@ -1,6 +1,7 @@
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Helmet } from 'react-helmet';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -16,6 +17,7 @@ import Cards from './Cards';
 const Home = () => {
     return (
         <div>
+            <Helmet><title>Home</title></Helmet>
             <>
                 <Swiper
                     spaceBetween={30}
