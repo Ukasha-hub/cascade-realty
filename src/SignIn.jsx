@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link,  useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
-import { GoogleAuthProvider, getAuth } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "./firebase.config";
 
 
@@ -11,8 +11,32 @@ const SignIn = () => {
    const location= useLocation()
    const navigate= useNavigate()
    const googleProvider= new GoogleAuthProvider()
+   const githubProvider= new GithubAuthProvider()
 
-   const handleGoogleSignIn=e=>{
+   const handleGoogleSignIn=()=>{
+        signInWithPopup(auth, googleProvider)
+        .then(result=>{
+            const user=result.user
+            console.log(user)
+            navigate(location?.state? location.state: '/')
+            
+        })
+        .catch(error=>{
+            console.log(error, error.message)
+        })
+   }
+
+   const handleGithubSignIn=()=>{
+        signInWithPopup(auth, githubProvider)
+        .then(result=>{
+            const user=result.user
+            console.log(user)
+            navigate(location?.state? location.state: '/')
+            
+        })
+        .catch(error=>{
+            console.log(error, error.message)
+        })
 
    }
 
@@ -53,6 +77,7 @@ const SignIn = () => {
                 <button className="btn btn-primary">Login</button>
 
                 <button className="btn btn-primary" onClick={handleGoogleSignIn}>SignIn with Google</button>
+                <button className="btn btn-primary" onClick={handleGithubSignIn}>SignIn with Github</button>
                </form>
 
 
