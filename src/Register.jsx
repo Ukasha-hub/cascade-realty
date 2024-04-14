@@ -1,9 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+
+import { ToastContainer, toast } from 'react-toastify';
+
+  import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
            const {createUser} = useContext(AuthContext)
+
+           const [seePass, setSeePass]= useState(false)
+
+           const navigate= useNavigate()
      
            const handleRegister= e=>{
             e.preventDefault();
@@ -13,13 +22,28 @@ const Register = () => {
             const password= form.get('password')
             const photo= form.get('photo')
             console.log(email, username, password, photo)
+
+
+            if(password<8){
+                toast.error("password should be atleast 8 characters long");
+                return
+            }
     
              createUser(email,password)
              .then(result=>{
                 console.log(result.user)
+                updateProfile(result.user,{
+                    displayName: username,
+                    photoURL: photo
+                })
+                .then()
+                .catch()
+                
+                navigate(location?.state? location.state: '/')
              })
              .catch(error=>{
                 console.error(error)
+                toast.error(error.message);
              })
             }
 
@@ -44,7 +68,7 @@ const Register = () => {
             </label>
             <label className="input input-bordered flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" clipRule="evenodd" /></svg>
-            <input type="password" required name="password" className="grow" placeholder="password" />
+            <input type={seePass?"text":"password"} required name="password" className="grow" placeholder="password" /><span onClick={()=>setSeePass(!seePass)}>Show</span>
         </label>
         <button className="btn btn-primary">Register</button>
             </form>
@@ -53,7 +77,7 @@ const Register = () => {
         <p>Already have an account? Then <a className="text-blue-500 underline"><Link to='/signIn'>Sign In</Link></a></p>
         
         </div>
-            
+        <ToastContainer />   
         </div>
     );
 };
