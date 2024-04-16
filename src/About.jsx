@@ -1,7 +1,7 @@
 //import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import { useForm } from "react-hook-form"
 import 'animate.css';
-
+import { Helmet } from 'react-helmet';
 
 
 
@@ -13,7 +13,7 @@ const About = () => {
     
     return (
         <div>
-
+             <Helmet><title>About</title></Helmet>
             <h1 className="animate__animated animate__bounce">About Us: Your Trusted Partner in Real Estate</h1>
             <p>Welcome to [Company Name], where your journey to finding your dream home begins. With a deep understanding of the profound significance of buying or renting a home, we stand as your reliable and dedicated partner in the quest for your perfect abode. At [Company Name], we are committed to offering unparalleled service, expert guidance, and a personalized approach to every client.
 

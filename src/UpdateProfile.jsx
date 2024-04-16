@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
-
+import { Helmet } from 'react-helmet';
 
 const UpdateProfile = () => {
     
@@ -56,7 +56,7 @@ const UpdateProfile = () => {
 
     return (
         <div>
-
+            <Helmet><title>Profile:{user.displayName}</title></Helmet>
             <img src={user.photoURL} alt="" />
             <h1>{user.email}</h1>
             <h1>{user.displayName}</h1>

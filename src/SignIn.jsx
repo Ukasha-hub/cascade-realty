@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link,  useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-
+import { Helmet } from 'react-helmet';
 import { ToastContainer, toast } from 'react-toastify';
 import app from "./firebase.config";
 
@@ -69,11 +69,11 @@ const SignIn = () => {
     }
     return (
         <div>
-
+             <Helmet><title>Sign In</title></Helmet>
             <h1 className="flex justify-center text-2xl">Sign In</h1>
 
             <div className="flex justify-center">
-            <div className=" lg:w-[40%] w-full  left-20">
+            <div className=" lg:w-[40%] w-full">
             
             <form onSubmit={handleLogin} >
              <label className="input input-bordered flex items-center gap-2">

@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { useContext, useState } from "react";
-
+import { Helmet } from 'react-helmet';
 import { ToastContainer, toast } from 'react-toastify';
 
   import 'react-toastify/dist/ReactToastify.css';
@@ -50,10 +50,12 @@ const Register = () => {
             }
 
     return (
+        
         <div>
+            <Helmet><title>Register</title></Helmet>
             <h1 className="flex justify-center text-2xl">Register</h1>
 
-       <div className="">
+       <div className="lg:w-[40%] w-full">
             
             <form onSubmit={handleRegister}>
             <label className="input input-bordered flex items-center gap-2">
