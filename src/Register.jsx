@@ -36,7 +36,9 @@ const Register = () => {
                     displayName: username,
                     photoURL: photo
                 })
-                .then()
+                .then(()=>{
+                    window.location.reload();
+                })
                 .catch()
                 
                 navigate(location?.state? location.state: '/')

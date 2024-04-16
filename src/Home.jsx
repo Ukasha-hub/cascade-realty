@@ -2,6 +2,7 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Helmet } from 'react-helmet';
+import Swal from 'sweetalert2'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -14,7 +15,30 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Cards from './Cards';
 
+
+import { useContext } from 'react';
+import { AuthContext } from './AuthProvider';
+import { useEffect } from 'react';
+
 const Home = () => {
+    
+   const {islogIn}= useContext(AuthContext)
+
+   
+   useEffect(() => {
+    const userLogIn = localStorage.getItem('LogIn');
+    if (!userLogIn) {
+      
+      localStorage.setItem('LogIn', true);
+
+      Swal.fire({
+        title: "Login Successful!",
+        text: "You have signed in!",
+        icon: "success"
+      });
+    }
+  }, [islogIn]);
+
     return (
         <div>
             <Helmet><title>Home</title></Helmet>
@@ -44,7 +68,7 @@ const Home = () => {
              <h1 className='bg-gray-300 text-4xl flex justify-center'>Our residence </h1>
 
              <Cards></Cards>
-
+              
         </div>
     );
 };

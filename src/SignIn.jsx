@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link,  useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { ToastContainer, toast } from 'react-toastify';
 import app from "./firebase.config";
 
 
@@ -23,6 +24,7 @@ const SignIn = () => {
         })
         .catch(error=>{
             console.log(error, error.message)
+            toast.error(error.message);
         })
    }
 
@@ -31,11 +33,13 @@ const SignIn = () => {
         .then(result=>{
             const user=result.user
             console.log(user)
+            history.push('/?loginSuccess=true');
             navigate(location?.state? location.state: '/')
             
         })
         .catch(error=>{
             console.log(error, error.message)
+            toast.error(error.message);
         })
 
    }
@@ -48,11 +52,13 @@ const SignIn = () => {
         signIn(email,password)
         .then(result=>{
             console.log(result.user)
-
+            
             navigate(location?.state? location.state: '/')
+            
         })
         .catch(error=>{
             console.error(error)
+            toast.error(error.message);
         })
 
 
@@ -84,7 +90,7 @@ const SignIn = () => {
             <p>Dont have an account? Then <a className="text-blue-500 underline"><Link to='/register'>Register</Link></a></p>
             
             </div>
-            
+            <ToastContainer />      
         </div>
     );
 };
