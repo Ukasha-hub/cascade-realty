@@ -28,7 +28,7 @@ const AuthProvider = ({children}) => {
 
     const logOut=()=>{
         setLoading(true)
-        localStorage.removeItem('LogIn');
+        sessionStorage.removeItem('LogIn');
         return signOut(auth)
     }
 

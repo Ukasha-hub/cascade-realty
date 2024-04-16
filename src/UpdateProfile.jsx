@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 const UpdateProfile = () => {
+    
     const {user}= useContext(AuthContext)
 
     console.log(user)

@@ -12,7 +12,7 @@ const Cards = () => {
     }, [])
 
     return (
-        <div className="pb-10">
+        <div className="pb-10" style={{backgroundImage:"url('https://i.pinimg.com/736x/48/d8/e1/48d8e18a2c8a344a91ba95cf6f51f1bd.jpg')", backgroundAttachment:'fixed', backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
             
            
 
@@ -20,8 +20,8 @@ const Cards = () => {
                 {
                     residence.map(res=>
                     <>
-                       <div className="card w-full bg-base-100 border-4 lg:m-10">
-                            <figure className="px-10 pt-10 w-30">
+                       <div className="card lg:card-side w-full  bg-base-200 border-2 lg:m-3">
+                            <figure className="px-10 pt-10 lg:py-3 w-30">
                                 <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" />
                             </figure>
                             <div className="card-body items-center text-center">
