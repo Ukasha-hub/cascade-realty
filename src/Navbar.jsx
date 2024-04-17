@@ -36,7 +36,7 @@ const Navbar = () => {
                             </div>
                             
                             :
-                            <div title="No user">
+                            <div title={user?.displayName?user.displayName: "No user"}>
                                 <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" /> 
                             </div>
 
