@@ -24,6 +24,15 @@ const Navbar = () => {
                     <li ><NavLink to='/'>Home</NavLink></li>
                     <li ><NavLink to='/about'>About Us</NavLink></li>
                     <li ><NavLink to='/updateProfile'>Update Profile</NavLink></li>
+                    <li>
+                    {
+                        user?
+                        <button onClick={handleSignOut} className="btn">Sign Out</button>
+                        :
+                        <button className="btn">
+                       <Link to='/signIn'>Sign In</Link></button>
+                    }
+                    </li>
                     </ul>
                     </div>
                     

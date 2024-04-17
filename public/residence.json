@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "cover_image": "cover1.jpg",
-        "images": ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"],
+        "cover_image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/473710956.jpg?k=5fab0f8bedae2110bd2c70f7154f9727d9352039ad61546a5ddd30488da98091&o=&hp=1",
+        "images": ["https://cf.bstatic.com/xdata/images/hotel/max1024x768/473710918.jpg?k=cb4ca4df17c960d426edcd6355216a223ddaf17844ee6d55ff46b11f4e0348ad&o=&hp=1", "https://cf.bstatic.com/xdata/images/hotel/max1024x768/473710924.jpg?k=016a2d6fcce4528afbdcc87eba488615d454ecd932ff8d16ee734a7ae8ee5aea&o=&hp=1", "https://cf.bstatic.com/xdata/images/hotel/max1024x768/473710926.jpg?k=39d1965d9c073e419380eb69f0befd13cbddc8868c601c3288892259f44eae53&o=&hp=1"],
         "estate_title": "Luxurious Villa with Stunning Views",
         "segment_name": "Luxury",
         "description": "This stunning villa offers breathtaking views of the surrounding landscape. With modern architecture and luxurious amenities, it's the epitome of elegance and comfort. The property features spacious living areas, a gourmet kitchen, multiple bedrooms with en-suite bathrooms, and expansive outdoor spaces perfect for entertaining.",
@@ -16,8 +16,8 @@
       },
       {
         "id": 2,
-        "cover_image": "cover2.jpg",
-        "images": ["image6.jpg", "image7.jpg", "image8.jpg", "image9.jpg", "image10.jpg"],
+        "cover_image": "https://images.prop24.com/234263240",
+        "images": ["https://assets.architecturaldigest.in/photos/62be0394fbcacb5a1f2d3cbd/16:9/w_2560%2Cc_limit/Gurgaon%2520home-featured.jpg", "https://hips.hearstapps.com/hmg-prod/images/0477913-10-1675181328.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*", "https://assets.architecturaldigest.in/photos/60144f751ff1174bcaebbdcc/16:9/w_2560%2Cc_limit/los-angeles-home-interior-design-joe-lucas-photos-1366x768.jpeg"],
         "estate_title": "Charming Family Home in Suburbia",
         "segment_name": "Family",
         "description": "Welcome to this lovely family home nestled in a quiet suburban neighborhood. Boasting a warm and inviting atmosphere, this residence features a spacious layout with comfortable living spaces, a fully-equipped kitchen, and a lush backyard oasis perfect for outdoor gatherings.",
@@ -31,8 +31,8 @@
       },
       {
         "id": 3,
-        "cover_image": "cover3.jpg",
-        "images": ["image11.jpg", "image12.jpg", "image13.jpg", "image14.jpg", "image15.jpg"],
+        "cover_image": "https://i0.wp.com/www.innovationquarter.com/wp-content/uploads/2022/01/winston-salem-apartment-complex_1200w.jpeg?resize=1024%2C684&ssl=1",
+        "images": ["https://a0.muscache.com/im/pictures/754bc8ba-586d-4842-a9a1-3335ee171098.jpg?im_w=720", "https://a0.muscache.com/im/pictures/airflow/Hosting-957419104051466735/original/4332e044-8037-405e-bff2-d5d39b2c32f0.jpg?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-54359142/original/59f30126-8304-4ce6-91aa-32692f4f7c73.jpeg?im_w=720"],
         "estate_title": "Modern Loft in the Heart of Downtown",
         "segment_name": "Urban",
         "description": "Experience city living at its finest in this sleek and stylish loft located in the vibrant downtown district. Featuring an open-concept floor plan, high ceilings, and industrial-chic design elements, this loft offers a contemporary urban lifestyle with easy access to shops, restaurants, and entertainment.",
@@ -46,8 +46,8 @@
       },
       {
         "id": 4,
-        "cover_image": "cover4.jpg",
-        "images": ["image16.jpg", "image17.jpg", "image18.jpg", "image19.jpg", "image20.jpg"],
+        "cover_image": "https://www.brooklynpaper.com/wp-content/uploads/2021/01/brooklyn-heights-8-montague-terrace-2020-sdevries-1-700x462.jpg",
+        "images": ["https://media.houseandgarden.co.uk/photos/61893fbcd9ae96d083cd0d1f/16:9/w_2580,c_limit/bricksandbrownstones_p261_bottom075x.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTITdSBy16k7BFHCESkjJXIk1z3iPfIWD-p8SsO1qo6Vw&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxXgyrFJEgPDIsCm4AnYJmDALexaSj-nBgDRGBAhIXQw&s"],
         "estate_title": "Historic Brownstone in Brooklyn Heights",
         "segment_name": "Historic",
         "description": "Step back in time with this charming historic brownstone nestled in the picturesque neighborhood of Brooklyn Heights. Featuring classic architectural details, including original hardwood floors and ornate moldings, this residence offers timeless elegance with modern comforts.",
@@ -58,84 +58,8 @@
         "facilities": ["Private Garden", "Fireplace", "Basement"],
         "number_of_rooms": 5,
         "number_of_washroom": 3
-      },
-      {
-        "id": 5,
-        "cover_image": "cover5.jpg",
-        "images": ["image21.jpg", "image22.jpg", "image23.jpg", "image24.jpg", "image25.jpg"],
-        "estate_title": "Seaside Retreat with Panoramic Ocean Views",
-        "segment_name": "Vacation",
-        "description": "Escape to this idyllic seaside retreat offering unparalleled ocean views and direct beach access. Designed for relaxation and entertainment, this coastal haven features spacious living areas, a gourmet kitchen, multiple balconies, and a private pool overlooking the shimmering waters.",
-        "status": "For Sale",
-        "price": "$4,200,000",
-        "location": "Malibu, CA",
-        "area": "4,500 sqft",
-        "facilities": ["Private Beach Access", "Pool", "Sun Deck"],
-        "number_of_rooms": 6,
-        "number_of_washroom": 4
-      },
-      {
-        "id": 6,
-        "cover_image": "cover6.jpg",
-        "images": ["image26.jpg", "image27.jpg", "image28.jpg", "image29.jpg", "image30.jpg"],
-        "estate_title": "Cozy Cottage in the Countryside",
-        "segment_name": "Rural",
-        "description": "Embrace the tranquility of country living in this charming cottage nestled amidst rolling hills and scenic landscapes. With its cozy interior, rustic charm, and expansive grounds, this property offers a peaceful retreat away from the hustle and bustle of city life.",
-        "status": "For Sale",
-        "price": "$400,000",
-        "location": "Carmel Valley, CA",
-        "area": "1,800 sqft",
-        "facilities": ["Garden", "Wood-Burning Fireplace", "Detached Garage"],
-        "number_of_rooms": 2,
-        "number_of_washroom": 1
-      },
-      {
-        "id": 7,
-        "cover_image": "cover7.jpg",
-        "images": ["image31.jpg", "image32.jpg", "image33.jpg", "image34.jpg", "image35.jpg"],
-        "estate_title": "Contemporary Townhouse in the Suburbs",
-        "segment_name": "Family",
-        "description": "Discover modern living in this sleek and stylish townhouse located in a family-friendly suburban community. Boasting contemporary design, spacious interiors, and a low-maintenance lifestyle, this property is perfect for families seeking comfort, convenience, and community.",
-        "status": "For Rent",
-        "price": "$2,800/month",
-        "location": "Palo Alto, CA",
-        "area": "2,000 sqft",
-        "facilities": ["Community Park", "Attached Garage", "Smart Home Technology"],
-        "number_of_rooms": 3,
-        "number_of_washroom": 2
-      },
-      {
-        "id": 8,
-        "cover_image": "cover8.jpg",
-        "images": ["image36.jpg", "image37.jpg", "image38.jpg", "image39.jpg", "image40.jpg"],
-        "estate_title": "Mountain Retreat with Spectacular Views",
-        "segment_name": "Vacation",
-        "description": "Escape to this mountain retreat and immerse yourself in nature's splendor. Perched atop a scenic hillside, this retreat offers breathtaking views of towering peaks and lush forests. With its cozy interiors, outdoor decks, and proximity to hiking trails and ski slopes, it's the perfect getaway for outdoor enthusiasts.",
-        "status": "For Sale",
-        "price": "$1,200,000",
-        "location": "Aspen, CO",
-        "area": "3,200 sqft",
-        "facilities": ["Deck", "Hot Tub", "Fire Pit"],
-        "number_of_rooms": 4,
-        "number_of_washroom": 3
-      },
-      {
-        "id": 9,
-        "cover_image": "cover9.jpg",
-        "images": ["image41.jpg", "image42.jpg", "image43.jpg", "image44.jpg", "image45.jpg"],
-        "estate_title": "Sustainable Urban Loft with Green Spaces",
-        "segment_name": "Urban",
-        "description": "Experience sustainable living in this eco-friendly urban loft located in a vibrant neighborhood. Designed with environmentally conscious features, including solar panels and recycled materials, this loft offers a modern and sustainable lifestyle. Enjoy access to community green spaces, rooftop gardens, and electric vehicle charging stations.",
-        "status": "For Rent",
-        "price": "$3,200/month",
-        "location": "Portland, OR",
-        "area": "1,500 sqft",
-        "facilities": ["Solar Panels", "Community Garden", "Bike Storage"],
-        "number_of_rooms": 2,
-        "number_of_washroom": 1
       }
-      
-      
+     
       
       
       

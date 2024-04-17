@@ -55,28 +55,35 @@ const UpdateProfile = () => {
     }
 
     return (
-        <div>
+        <div style={{backgroundImage:"url('https://img.freepik.com/free-photo/contemporary-building-blur_23-2147694747.jpg')",backgroundSize:'cover', backgroundRepeat:'no-repeat'}}>
+            <div className="flex flex-col justify-center items-center gap-5  py-5">
             <Helmet><title>Profile:{user.displayName}</title></Helmet>
-            <img src={user.photoURL} alt="" />
-            <h1>{user.email}</h1>
-            <h1>{user.displayName}</h1>
+            <div className="avatar">
+                <div className="w-[200px] rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <img src={user.photoURL}/>
+                </div>
+                </div>
+            
+            <h1 className="text-2xl font-semibold">{user.email}</h1>
+           
             
 
             <form onSubmit={changeUserName} >
-                <label>User Name:</label>
+                <label className="font-semibold">User Name:</label>
                 <div className="flex flex-row">
-                <input type="text" placeholder="User Name" name="username" className="input input-bordered w-full max-w-xs" />
-                <button  className="btn btn-primary">Change</button>
+                <input type="text" placeholder="User Name" name="username" defaultValue={user.displayName} className="input input-bordered w-full max-w-sm" />
+                <button  className="btn btn-md">Change</button>
                 </div>
             </form> 
             <form onSubmit={changePhotoURL}>   
-                <label>Image URL:</label>
+                <label className="font-semibold">Image URL:</label>
                 <div className="flex flex-row">
-                <input type="text" placeholder="URL" name="photo"  className="input input-bordered w-full max-w-xs" />
-                <button className="btn btn-primary">Change</button>
+                <input type="text" placeholder="URL" name="photo" defaultValue={user.photoURL}  className="input input-bordered w-full max-w-xs" />
+                <button className="btn ">Change</button>
                 </div>
             </form>
             <ToastContainer />      
+        </div>
         </div>
     );
 };
