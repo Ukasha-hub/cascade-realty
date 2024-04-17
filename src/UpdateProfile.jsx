@@ -3,10 +3,28 @@ import { AuthContext } from "./AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import { Helmet } from 'react-helmet';
+import Swal from 'sweetalert2'
+import { useEffect } from "react";
+
+import 'animate.css';
 
 const UpdateProfile = () => {
     
     const {user}= useContext(AuthContext)
+
+    useEffect(() => {
+        const userLogIn = sessionStorage.getItem('LogIn');
+        if (user && !userLogIn) {
+          
+            sessionStorage.setItem('LogIn', true);
+    
+          Swal.fire({
+            title: "Login Successful!",
+            text: "You have signed in!",
+            icon: "success"
+          });
+        }
+      }, []);
 
     console.log(user)
     
@@ -58,8 +76,9 @@ const UpdateProfile = () => {
         <div style={{backgroundImage:"url('https://img.freepik.com/free-photo/contemporary-building-blur_23-2147694747.jpg')",backgroundSize:'cover', backgroundRepeat:'no-repeat'}}>
             <div className="flex flex-col justify-center items-center gap-5  py-5">
             <Helmet><title>Profile:{user.displayName}</title></Helmet>
+            <h1 className="text-4xl font-bold animate__animated animate__zoomInDown">Hello, {user.displayName}</h1>
             <div className="avatar">
-                <div className="w-[200px] rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <div className="w-[200px] rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 animate__animated animate__rotateIn">
                     <img src={user.photoURL}/>
                 </div>
                 </div>

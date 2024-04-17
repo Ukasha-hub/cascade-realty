@@ -14,16 +14,20 @@ import AuthProvider from './AuthProvider';
 import PrivateRoute from './PrivateRoute';
 import UpdateProfile from './UpdateProfile';
 import About from './About';
+import ErrorPage from './ErrorPage';
+
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:"/",
-        element:<Home></Home>
+        element:<Home></Home>,
+        
       },
       {
         path: '/details/:id',

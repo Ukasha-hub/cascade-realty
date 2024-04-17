@@ -1,15 +1,42 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import { useEffect } from "react";
+import { IoIosPricetags } from "react-icons/io";
+import { IoHome } from "react-icons/io5";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaChartArea } from "react-icons/fa";
+import { AiFillHeart } from "react-icons/ai";
+import { MdOutlineBedroomChild } from "react-icons/md";
+import { FaRestroom } from "react-icons/fa";
+import { FaCoffee } from "react-icons/fa";
 
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 
-
-
+import { useContext } from 'react';
+import { AuthContext } from './AuthProvider';
+import Swal from 'sweetalert2'
 
 
 const Details = () => {
+
+    const {user}= useContext(AuthContext)
+   
+
+   
+    useEffect(() => {
+     const userLogIn = sessionStorage.getItem('LogIn');
+     if (user && !userLogIn) {
+       
+         sessionStorage.setItem('LogIn', true);
+ 
+       Swal.fire({
+         title: "Login Successful!",
+         text: "You have signed in!",
+         icon: "success"
+       });
+     }
+   }, []);
 
     useEffect(()=>{
         Aos.init({duration: 1000})
@@ -56,17 +83,18 @@ const Details = () => {
               <div className="mx-20">
                   
                   <ul className="space-y-5">
-                    <li><button className="btn btn-lg">Price:{reside.price}</button></li>
-                    <li><span className="font-bold">Location</span> {reside.location}</li>
-                    <li><span className="font-bold">Area</span> {reside.area}</li>
-                    <li><span className="font-bold">Segment</span> {reside.segment_name}</li>
-                    <li><span className="font-bold">Rooms</span> {reside.number_of_rooms}</li>
-                    <li><span className="font-bold">Bathrooms</span> {reside.number_of_washroom}</li>
+                    <li><button className="btn btn-lg"><IoIosPricetags />{reside.price}</button></li>
+                    <li><span className="font-bold"><IoHome />Status</span> {reside.status}</li>
+                    <li><span className="font-bold"><FaLocationDot />Location</span> {reside.location}</li>
+                    <li><span className="font-bold"><FaChartArea />Area</span> {reside.area}</li>
+                    <li><span className="font-bold"><AiFillHeart />Segment</span> {reside.segment_name}</li>
+                    <li><span className="font-bold"><MdOutlineBedroomChild />Rooms</span> {reside.number_of_rooms}</li>
+                    <li><span className="font-bold"><FaRestroom />Bathrooms</span> {reside.number_of_washroom}</li>
                   </ul>
                   <div className="divider"></div> 
                   
                   <div className="border-4 rounded-lg p-10">
-                  <h1 className="flex justify-center text-3xl font-bold mb-3">Facilities</h1>
+                  <h1 className="flex flex-row gap-4 justify-center text-3xl font-bold mb-3"><span><FaCoffee /></span>Facilities</h1>
                   <ul className="space-y-5 list-disc ">
                     {reside.facilities.map(res=>
                     <>

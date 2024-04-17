@@ -6,6 +6,10 @@ import { Helmet } from 'react-helmet';
 import { AuthContext } from './AuthProvider';
 import { useEffect } from 'react';
 
+
+
+import Swal from 'sweetalert2'
+
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 
@@ -14,13 +18,29 @@ import 'aos/dist/aos.css'
 
 
 const About = () => {
-    sessionStorage.setItem('LogIn', true);
+  const {user}= useContext(AuthContext)
+   
+
+   
+  useEffect(() => {
+   const userLogIn = sessionStorage.getItem('LogIn');
+   if (user && !userLogIn) {
+     
+       sessionStorage.setItem('LogIn', true);
+
+     Swal.fire({
+       title: "Login Successful!",
+       text: "You have signed in!",
+       icon: "success"
+     });
+   }
+ }, []);
 
     useEffect(()=>{
       Aos.init({duration: 1000})
      },[])
     
-    const {user}= useContext(AuthContext)
+    
     return (
       
       <div className="p-5" style={{backgroundImage:"url('https://img.freepik.com/free-photo/office-buildings-out-focus_1194-1205.jpg')",backgroundSize:'cover', backgroundRepeat:'no-repeat'}}>
